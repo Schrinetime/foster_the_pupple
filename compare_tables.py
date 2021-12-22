@@ -1,9 +1,9 @@
+import os
 import glob
 import pandas as pd
 
-folder_loc = r"C:\Users\schri\PycharmProjects\foster_dogs"
-
-files = glob.glob(folder_loc + "/*.csv")
+folder_loc = os.getcwd()
+files = glob.glob(os.path.join(folder_loc, "logs", "*.csv"))
 
 dfs = {}
 for file in files:

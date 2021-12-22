@@ -1,3 +1,4 @@
+import os
 import requests
 import pandas as pd
 from datetime import datetime
@@ -37,4 +38,4 @@ dogFrame = pd.DataFrame(dog_list)
 dogFrame.set_index('id', inplace=True)
 
 ts = datetime.now().strftime("%Y-%m-%d_%H-%M")
-dogFrame.to_csv(f"{ts}.csv")
+dogFrame.to_csv(os.path.join("logs", f"{ts}.csv"))
