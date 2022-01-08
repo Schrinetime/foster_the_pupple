@@ -3,7 +3,7 @@ import glob
 import pandas as pd
 
 folder_loc = os.getcwd()
-files = glob.glob(os.path.join(folder_loc, "logs", "*.csv"))
+files = sorted(glob.glob(os.path.join(folder_loc, "logs", "*.csv")))
 
 dfs = {}
 for file in files:

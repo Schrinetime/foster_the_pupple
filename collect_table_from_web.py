@@ -1,4 +1,5 @@
 import os
+import sys
 import requests
 import pandas as pd
 from datetime import datetime
@@ -37,5 +38,7 @@ for (status, url) in search_locs:
 dogFrame = pd.DataFrame(dog_list)
 dogFrame.set_index('id', inplace=True)
 
+abspath = os.path.abspath(__file__)
+dname = os.path.dirname(abspath)
 ts = datetime.now().strftime("%Y-%m-%d_%H-%M")
-dogFrame.to_csv(os.path.join("logs", f"{ts}.csv"))
+dogFrame.to_csv(os.path.join(dname,"logs", f"{ts}.csv"))
