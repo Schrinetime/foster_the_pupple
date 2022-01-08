@@ -75,3 +75,4 @@ def check_in_out_context(df):
 
 
 in_out.apply(check_in_out_context, axis=1)
+arf = cur[cur['loc'].ne('Foster Home')]
